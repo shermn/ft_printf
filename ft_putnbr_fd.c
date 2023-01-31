@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dec_to_hex.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgoncalv <sgoncalv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 10:42:53 by sgoncalv          #+#    #+#             */
-/*   Updated: 2023/01/27 13:27:44 by sgoncalv         ###   ########.fr       */
+/*   Created: 2023/01/27 11:04:52 by sgoncalv          #+#    #+#             */
+/*   Updated: 2023/01/27 12:56:06 by sgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void ft_dec_to_hex(size_t dec)
+void	ft_putnbr_fd(int n, int fd)
 {
-    char    base[] = {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
-    
-    if ((dec / 16) > 0)
-    {
-        ft_dec_to_hex((dec / 16));
-    }
-    write(1, &base[dec % 16], 1);
-    write(1, "\n", 1);
+	char	*p;
+	int		i;
+
+	if (!n)
+	{
+		return ;
+	}
+	i = 0;
+	p = ft_itoa(n);
+	while (p[i] != '\0')
+	{
+		write(fd, &p[i], 1);
+		i++;
+	}
 }
-/*
-int main()
-{
-    ft_dec_to_hex(115);
-    write(1, "\n", 1);
-    return(0);
-}*/

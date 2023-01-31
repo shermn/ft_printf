@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dec_to_hex.c                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgoncalv <sgoncalv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 10:42:53 by sgoncalv          #+#    #+#             */
-/*   Updated: 2023/01/27 13:27:44 by sgoncalv         ###   ########.fr       */
+/*   Created: 2023/01/27 14:24:24 by sgoncalv          #+#    #+#             */
+/*   Updated: 2023/01/27 14:28:49 by sgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void ft_dec_to_hex(size_t dec)
+char	*ft_strdup(const char *s1)
 {
-    char    base[] = {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
-    
-    if ((dec / 16) > 0)
-    {
-        ft_dec_to_hex((dec / 16));
-    }
-    write(1, &base[dec % 16], 1);
-    write(1, "\n", 1);
+	char	*str;
+	char	*src;
+	int		i;
+	int		c;
+
+	c = 0;
+	i = ft_strlen((const char *) s1);
+	str = (char *) malloc(i + 1);
+	if (!str)
+		return (0);
+	src = (char *) s1;
+	while (src[c] != '\0')
+	{
+		str[c] = src[c];
+		c++;
+	}
+	str[c] = '\0';
+	return (str);
 }
-/*
-int main()
-{
-    ft_dec_to_hex(115);
-    write(1, "\n", 1);
-    return(0);
-}*/
