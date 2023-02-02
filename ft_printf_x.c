@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_p.c                                      :+:      :+:    :+:   */
+/*   ft_printf_x.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgoncalv <sgoncalv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/11 12:55:57 by sgoncalv          #+#    #+#             */
-/*   Updated: 2023/02/02 09:07:26 by sgoncalv         ###   ########.fr       */
+/*   Created: 2023/02/02 09:09:55 by sgoncalv          #+#    #+#             */
+/*   Updated: 2023/02/02 09:22:13 by sgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printf_p(char *str)
+int ft_printf_x(int n)
 {
-    size_t     len;
-    size_t      n;
-    
-    len = ft_strlen(str);
-    n = (size_t) str;
-    write(1,"0x",2);
     ft_dec_to_hex(n);
-       return (len);
+    write(1, "\n", 1);
+    return(ft_strlen(ft_itoa(n)));
 }

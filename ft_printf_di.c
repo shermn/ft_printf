@@ -24,11 +24,3 @@ int ft_printf_di(int n)
     write(1,"\n", 1);
     return(len);
 }
-
-int main()
-{
-    int s;
-    s = 6748;
-    ft_printf_di(s);
-    return(0);
-}
