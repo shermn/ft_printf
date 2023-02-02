@@ -6,7 +6,7 @@
 /*   By: sgoncalv <sgoncalv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 23:11:28 by sgoncalv          #+#    #+#             */
-/*   Updated: 2023/02/02 09:14:03 by sgoncalv         ###   ########.fr       */
+/*   Updated: 2023/02/02 09:25:21 by sgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ char	*ft_itoa(int n);
 char	*ft_strdup(const char *s1);
 int ft_printf_di(int n);
 int ft_printf_x(int n);
+int	ft_to_upper(int c);
 
 #endif
 
