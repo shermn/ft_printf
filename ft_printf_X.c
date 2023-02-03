@@ -6,7 +6,7 @@
 /*   By: sgoncalv <sgoncalv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 09:23:10 by sgoncalv          #+#    #+#             */
-/*   Updated: 2023/02/02 10:46:54 by sgoncalv         ###   ########.fr       */
+/*   Updated: 2023/02/03 13:24:18 by sgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ void ft_upper(size_t dec)
 int ft_printf_X(int n)
 {
     ft_upper(n);
-    write(1, "\n", 1);
     return(ft_strlen(ft_itoa(n)));
 }

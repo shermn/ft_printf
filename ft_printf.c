@@ -6,68 +6,72 @@
 /*   By: sgoncalv <sgoncalv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 20:38:08 by sgoncalv          #+#    #+#             */
-/*   Updated: 2023/02/03 08:36:17 by sgoncalv         ###   ########.fr       */
+/*   Updated: 2023/02/03 13:34:37 by sgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "ft_printf.h"
 
-int	print_esp(const char c, va_list *print)
+int	ft_check_arg(va_list arg, char c)
 {
-	int		len;
+	int	lenght;
 
-	len = 1;
+	lenght = 1;
 	if (c == 'c')
-		ft_printf_c((va_arg((*print), char)));
-	else if (c == 's')
-		len = ft_printf_s((va_arg((*print), char *)));
-	else if (c == '%')
-		ft_printf_c(c);
-	else if (c == 'p')
-		len = ft_printf_p((va_arg((*print), char *)));
-	else if (c == 'd' || c == 'i')
-		len = ft_printf_di((va_arg((*print), int)));
-	else if (c == 'u')
-		len = ft_printf_u((va_arg((*print), unsigned int)));
-	else if (c == 'x')
-		len = ft_printf_x((va_arg((*print), int)));
-	else if (c == 'X')
-		len = ft_printf_X((va_arg((*print), int)));
-	return (len);
+		lenght = ft_printf_c(va_arg(arg, int));
+	if (c == 's')
+		lenght = ft_printf_s(va_arg(arg, char *));
+	if (c == 'p')
+		lenght = ft_printf_p(va_arg(arg, char *));
+	if (c == 'd' || c == 'i')
+		lenght = ft_printf_di(va_arg(arg, int));
+	if (c == 'u')
+		lenght = ft_printf_u(va_arg(arg, unsigned int));
+	if (c == 'x')
+		lenght = ft_printf_x(va_arg(arg, int));
+	if (c == 'X')
+		lenght = ft_printf_X(va_arg(arg, int));
+	if (c == '%')
+		ft_printf_c('%');
+	return (lenght);
 }
 
-int	ft_printf(const char *format, ...)
+int	ft_printf(const char *str, ...)
 {
-	int		len;
-	char	*str;
-	va_list	print;
+	va_list		arg;
+	int			i;
+	int			lenght;
+	char		c;
 
-	len = 0;
-	str = (char *) format;
-	va_start(print, format);
-	while (str[0] != '\0')
+	i = 0;
+	lenght = 0;
+	va_start(arg, str);
+	while (str[i])
 	{
-		if (str[0] == '%')
+		c = str[i + 1];
+		if (str[i] == '%')
 		{
-			str++;
-			len = print_esp(str[0], &print) + len;
+			lenght += ft_check_arg(arg, c);
+			i++;
 		}
 		else
-		{
-			ft_printf_c(str[0]);
-			len++;
-		}
-		str++;
+			lenght += write(1, &str[i], sizeof(char));
+		i++;
 	}
-	va_end(print);
-	return (len);
+	va_end(arg);
+	return (lenght);
 }
+
 int main()
-{
-int i;
-i = printf("%p\n", NULL);
-printf("%d\n", i);
-i = ft_printf("%p\n", NULL);
-printf("%d\n", i);
-return 0;
-}
+ {
+ 	int i;
+	int b = 5323;
+	char a = 'c';
+	char c[] = "sherman";
+	int d = -1234;
+	i = 23;
+	printf("%d printf\n", i);
+ 	ft_printf("int %d ponteiro %p char:%c string %s unsigned int %u hex lower %x hex upper %X\n", i, b, a, c, d, b, b);
+ 	return(0);
+ }

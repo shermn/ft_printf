@@ -6,7 +6,7 @@
 /*   By: sgoncalv <sgoncalv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 23:11:28 by sgoncalv          #+#    #+#             */
-/*   Updated: 2023/02/03 08:32:15 by sgoncalv         ###   ########.fr       */
+/*   Updated: 2023/02/03 12:53:05 by sgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdarg.h>
 
 int ft_printf_c(char c);
 int ft_printf_di(int n);

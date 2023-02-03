@@ -21,6 +21,5 @@ int ft_printf_di(int n)
 	len = ft_strlen(str);
 	free(str);
     ft_putnbr_fd(n, 1);
-    write(1,"\n", 1);
     return(len);
 }
