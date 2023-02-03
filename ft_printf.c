@@ -6,7 +6,7 @@
 /*   By: sgoncalv <sgoncalv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 20:38:08 by sgoncalv          #+#    #+#             */
-/*   Updated: 2023/02/03 08:29:57 by sgoncalv         ###   ########.fr       */
+/*   Updated: 2023/02/03 08:36:17 by sgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,13 @@ int	ft_printf(const char *format, ...)
 	}
 	va_end(print);
 	return (len);
+}
+int main()
+{
+int i;
+i = printf("%p\n", NULL);
+printf("%d\n", i);
+i = ft_printf("%p\n", NULL);
+printf("%d\n", i);
+return 0;
 }
