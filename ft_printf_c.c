@@ -6,7 +6,7 @@
 /*   By: sgoncalv <sgoncalv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 23:43:32 by sgoncalv          #+#    #+#             */
-/*   Updated: 2023/01/09 23:51:30 by sgoncalv         ###   ########.fr       */
+/*   Updated: 2023/02/03 08:24:55 by sgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 int ft_printf_c(char c)
 {
-    int len;
-
-    len = 1;
-    write(1,&c,sizeof(char));
-    return(len);
+    write(1, &c, 1);
+    return(1);
 }

@@ -6,7 +6,7 @@
 /*   By: sgoncalv <sgoncalv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 23:11:28 by sgoncalv          #+#    #+#             */
-/*   Updated: 2023/02/02 09:25:21 by sgoncalv         ###   ########.fr       */
+/*   Updated: 2023/02/03 08:32:15 by sgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,18 @@
 #include <stdlib.h>
 
 int ft_printf_c(char c);
+int ft_printf_di(int n);
+int ft_printf_p(char *str);
+int ft_printf_s(char *s);
+int ft_printf_u(unsigned int n);
+int ft_printf_x(int n);
+int ft_printf_X(int n);
 void	ft_putstr_fd(char *s, int fd);
 int	ft_strlen(const char *str);
 void ft_dec_to_hex(size_t dec);
-int ft_printf_p(char *str);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_itoa(int n);
 char	*ft_strdup(const char *s1);
-int ft_printf_di(int n);
-int ft_printf_x(int n);
 int	ft_to_upper(int c);
 
 #endif
