@@ -13,7 +13,7 @@ all: $(NAME)
 $(NAME): $(SRC)
 	$(CC) $(CFLAGS) -c $(SRC)
 	ar rcs $(NAME) $(OBJ)
-	$(CC) $(CFLAGS) $(NAME)
+
 
 clean:
 	rm -rf *.o
