@@ -1,6 +1,6 @@
-NAME = ft_printf.a
-SRC = 	ft_dec_to_hex.c ft_itoa.c ft_putnbr_fd.c ft_putstr.c ft_strdup.c ft_strlen.c ft_to_upper.c \
-		ft_printf.c ft_printf_c.c ft_printf_di.c ft_printf_p.c ft_printf_s.c ft_printf_u.c ft_printf_x.c\
+NAME = libftprintf.a
+SRC = 	ft_printf.c ft_dec_to_hex.c ft_itoa.c ft_putnbr_fd.c ft_putstr.c ft_strdup.c ft_strlen.c\
+		ft_to_upper.c ft_printf_c.c ft_printf_di.c ft_printf_p.c ft_printf_s.c ft_printf_u.c ft_printf_x.c\
 		ft_printf_X.c
 OBJ = *.o
 
@@ -10,9 +10,10 @@ CFLAGS = -Wextra -Wall -Werror
 
 all: $(NAME)
 
-$(NAME):
-	$(CC) $(CFLAGS) -I$(HEADER) -c $(SRC)
+$(NAME): $(SRC)
+	$(CC) $(CFLAGS) -c $(SRC)
 	ar rcs $(NAME) $(OBJ)
+	$(CC) $(CFLAGS) $(NAME)
 
 clean:
 	rm -rf *.o
@@ -22,4 +23,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

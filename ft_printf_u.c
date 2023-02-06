@@ -6,20 +6,20 @@
 /*   By: sgoncalv <sgoncalv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 14:42:45 by sgoncalv          #+#    #+#             */
-/*   Updated: 2023/02/01 16:09:51 by sgoncalv         ###   ########.fr       */
+/*   Updated: 2023/02/03 18:22:10 by sgoncalv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_printf_u(unsigned int n)
+int	ft_printf_u(unsigned int n)
 {
 	char	dec[11];
 	int		i;
-    int     len;
+	int		len;
 
 	i = -1;
-    len = 0;
+	len = 0;
 	while (++i < 10)
 		dec[i] = i + '0';
 	dec[i] = '\0';

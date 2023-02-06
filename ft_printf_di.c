@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_di.c                                      :+:      :+:    :+:   */
+/*   ft_printf_di.c                                      :+:      :+:    :+:  */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgoncalv <sgoncalv@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,14 +12,14 @@
 
 #include "ft_printf.h"
 
-int ft_printf_di(int n)
+int	ft_printf_di(int n)
 {
-    int len;
 	char	*str;
+	int		len;
 
 	str = ft_itoa(n);
 	len = ft_strlen(str);
 	free(str);
-    ft_putnbr_fd(n, 1);
-    return(len);
+	ft_putnbr_fd(n, 1);
+	return (len);
 }

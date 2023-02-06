@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ft_printf.h"
 
 int	ft_check_arg(va_list arg, char c)
@@ -31,7 +30,7 @@ int	ft_check_arg(va_list arg, char c)
 	if (c == 'x')
 		lenght = ft_printf_x(va_arg(arg, int));
 	if (c == 'X')
-		lenght = ft_printf_X(va_arg(arg, int));
+		lenght = ft_x(va_arg(arg, int));
 	if (c == '%')
 		ft_printf_c('%');
 	return (lenght);
@@ -62,16 +61,3 @@ int	ft_printf(const char *str, ...)
 	va_end(arg);
 	return (lenght);
 }
-
-int main()
- {
- 	int i;
-	int b = 5323;
-	char a = 'c';
-	char c[] = "sherman";
-	int d = -1234;
-	i = 23;
-	printf("%d printf\n", i);
- 	ft_printf("int %d ponteiro %p char:%c string %s unsigned int %u hex lower %x hex upper %X\n", i, b, a, c, d, b, b);
- 	return(0);
- }
