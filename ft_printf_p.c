@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_conversor(unsigned long int n, int len)
+/*int	ft_conversor(unsigned long int n, int len)
 {
 	char	hexa[17];
 	int		i;
@@ -40,4 +40,15 @@ int	ft_printf_p(unsigned long int n, int len)
 	ft_putstr_fd("0x", 1);
 	len = ft_conversor(n, len);
 	return (len + 2);
+}
+*/
+
+int	ft_printf_p(unsigned long d)
+{
+	int		lenght;
+
+	write(1, "0x", 2);
+	lenght = ft_decimal_to_hexadecimal(d, 0, 'p');
+	lenght += 2;
+	return (lenght);
 }
