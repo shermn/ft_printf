@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 
+int		ft_printf(const char *str, ...);
 int		ft_printf_c(char c);
 int		ft_printf_di(int n);
 int		ft_printf_p(char *str);

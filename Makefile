@@ -14,12 +14,11 @@ $(NAME): $(SRC)
 	$(CC) $(CFLAGS) -c $(SRC)
 	ar rcs $(NAME) $(OBJ)
 
-
 clean:
 	rm -rf *.o
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -rf $(NAME) ft_printf.h.gch
 
 re: fclean all
 
