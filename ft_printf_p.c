@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_printf_p(char *str)
+/*int	ft_printf_p(char *str)
 {
 	unsigned int		n;
 	size_t				len;
@@ -22,4 +22,33 @@ int	ft_printf_p(char *str)
 	write(1, "0x", 2);
 	ft_dec_to_hex(n);
 	return (len);
+}*/
+int	ft_conversor(unsigned long int n, int len)
+{
+	char	hexa[17];
+	int		i;
+	char	s;
+
+	s = '0';
+	i = -1;
+	while (++i < 16)
+	{
+		if (i == 10)
+			s = 'W';
+		hexa[i] = i + s;
+	}
+	hexa[i] = '\0';
+	if (n > 15)
+		len = ft_conversor((n / 16), len);
+	n = n % 16;
+	len++;
+	ft_printf_c(hexa[n]);
+	return (len);
+}
+
+int	ft_printf_p(unsigned long int n, int len)
+{
+	ft_putstr_fd("0x", 1);
+	len = ft_conversor(n, len);
+	return (len + 2);
 }

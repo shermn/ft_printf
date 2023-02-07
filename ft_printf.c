@@ -22,7 +22,7 @@ int	ft_check_arg(va_list arg, char c)
 	if (c == 's')
 		lenght = ft_printf_s(va_arg(arg, char *));
 	if (c == 'p')
-		lenght = ft_printf_p(va_arg(arg, char *));
+		lenght = ft_printf_p((va_arg(arg, unsigned long int)), 0);
 	if (c == 'd' || c == 'i')
 		lenght = ft_printf_di(va_arg(arg, int));
 	if (c == 'u')
