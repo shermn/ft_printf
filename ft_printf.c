@@ -26,11 +26,11 @@ int	ft_check_arg(va_list arg, char c)
 	if (c == 'd' || c == 'i')
 		lenght = ft_printf_di(va_arg(arg, int));
 	if (c == 'u')
-		lenght = ft_printf_u(va_arg(arg, unsigned int));
+		lenght = ft_printf_u((va_arg(arg, unsigned int)), 0);
 	if (c == 'x')
-		lenght = ft_printf_x(va_arg(arg, int));
+		lenght = ft_printf_x((va_arg(arg, int)), 0);
 	if (c == 'X')
-		lenght = ft_x(va_arg(arg, int));
+		lenght = ft_x((va_arg(arg, int)), 0);
 	if (c == '%')
 		ft_printf_c('%');
 	return (lenght);

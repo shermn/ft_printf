@@ -17,9 +17,10 @@ int	ft_printf_di(int n)
 	char	*str;
 	int		len;
 
+	len = 0;
 	str = ft_itoa(n);
 	len = ft_strlen(str);
+	ft_putstr_fd(str, 1);
 	free(str);
-	ft_putnbr_fd(n, 1);
 	return (len);
 }

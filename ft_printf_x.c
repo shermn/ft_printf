@@ -12,8 +12,30 @@
 
 #include "ft_printf.h"
 
-int	ft_printf_x(unsigned int n)
+/*int	ft_printf_x(unsigned int n)
 {
 	ft_dec_to_hex(n);
 	return (ft_strlen(ft_itoa(n)));
+}*/
+int	ft_printf_x(unsigned int n, int len)
+{
+	char	hexa[17];
+	int		i;
+	char	s;
+
+	s = '0';
+	i = -1;
+	while (++i < 16)
+	{
+		if (i == 10)
+			s = 'W';
+		hexa[i] = i + s;
+	}
+	hexa[i] = '\0';
+	if (n > 15)
+		len = ft_printf_x((n / 16), len);
+	n = n % 16;
+	len++;
+	ft_printf_c(hexa[n]);
+	return (len);
 }

@@ -12,20 +12,19 @@
 
 #include "ft_printf.h"
 
-int	ft_printf_u(unsigned int n)
+int	ft_printf_u(unsigned int n, int len)
 {
 	char	dec[11];
 	int		i;
-	int		len;
 
 	i = -1;
-	len = 0;
 	while (++i < 10)
 		dec[i] = i + '0';
 	dec[i] = '\0';
 	if (n > 9)
-		len += ft_printf_u(n / 10);
+		len = ft_printf_u((n / 10), len);
 	n = n % 10;
-	ft_printf_c((dec[n]));
+	len++;
+	ft_printf_c(dec[n]);
 	return (len);
 }
