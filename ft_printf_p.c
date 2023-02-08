@@ -16,8 +16,16 @@ int	ft_printf_p(unsigned long d)
 {
 	int		lenght;
 
-	write(1, "0x", 2);
-	lenght = ft_decimal_to_hexadecimal(d, 0, 'p');
-	lenght += 2;
+	if (!d)
+	{
+		ft_putstr_fd("(nil)", 1);
+		lenght = 5;
+	}
+	else
+	{
+		write(1, "0x", 2);
+		lenght = ft_decimal_to_hexadecimal(d, 0, 'p');
+		lenght += 2;
+	}
 	return (lenght);
 }
