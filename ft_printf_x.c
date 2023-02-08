@@ -12,11 +12,6 @@
 
 #include "ft_printf.h"
 
-/*int	ft_printf_x(unsigned int n)
-{
-	ft_dec_to_hex(n);
-	return (ft_strlen(ft_itoa(n)));
-}*/
 int	ft_printf_x(unsigned int n, int len)
 {
 	char	hexa[17];
